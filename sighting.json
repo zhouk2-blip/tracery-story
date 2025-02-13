@@ -1,0 +1,39 @@
+{
+    "origin": ["#introduction# #adventure# #conclusion#"],
+    "introduction": ["Once upon a time, in a #region#, there was a #person# who longed for #desire#."],
+    "adventure": [
+      "One day, they set off on a #journey# across the #body_of_water# to find a legendary #artifact#.",
+      "Their #travel# led them through #vegetation#, over #slope#, and into the depths of a #natural_object#.",
+      "They met a #communicator# who shared a #message# about a hidden #treasure#."
+    ],
+    "conclusion": [
+      "After many #happening#, they finally reached their #destination# and discovered the #artifact#.",
+      "But their #conflict# with a #unpleasant_person# almost cost them everything!",
+      "In the end, they returned home, forever changed by their #experience#."
+    ],
+    "region": ["distant land", "mystical forest", "ancient kingdom", "forgotten island"],
+    "person": ["explorer", "warrior", "scholar", "wanderer"],
+    "desire": ["knowledge", "riches", "glory", "adventure"],
+    "journey": ["voyage", "pilgrimage", "expedition", "odyssey"],
+    "body_of_water": ["ocean", "river", "lake", "sea"],
+    "artifact": ["crown of wisdom", "sword of destiny", "scroll of truth", "gem of eternity"],
+    "travel": ["journey", "quest", "odyssey", "adventure"],
+    "vegetation": ["dense jungle", "whispering woods", "sacred grove", "endless plains"],
+    "slope": ["treacherous mountain", "rolling hills", "winding valley", "cliffside path"],
+    "natural_object": ["cave", "hidden temple", "floating island", "forgotten ruin"],
+    "communicator": ["sage", "prophet", "storyteller", "hermit"],
+    "message": ["prophecy", "ancient text", "mysterious letter", "cryptic riddle"],
+    "treasure": ["golden idol", "enchanted relic", "secret knowledge", "eternal flame"],
+    "happening": ["trials", "battles", "puzzles", "fateful encounters"],
+    "destination": ["final resting place", "hidden sanctuary", "legendary shrine", "ancient city"],
+    "conflict": ["duel", "war", "deception", "betrayal"],
+    "unpleasant_person": ["tyrant", "traitor", "cursed guardian", "dark sorcerer"],
+    "experience": ["journey", "challenges", "self-discovery", "revelation"],
+  
+    "image": [
+      "<svg width='200' height='200' xmlns='http://www.w3.org/2000/svg'><circle cx='100' cy='100' r='50' fill='red'/></svg>",
+      "<svg width='200' height='200' xmlns='http://www.w3.org/2000/svg'><rect x='50' y='50' width='100' height='100' fill='blue'/></svg>",
+      "<svg width='200' height='200' xmlns='http://www.w3.org/2000/svg'><polygon points='100,10 40,190 190,70 10,70 160,190' fill='green'/></svg>"
+    ]
+  }
+  
