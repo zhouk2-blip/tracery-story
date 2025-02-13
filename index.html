@@ -1,70 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventural Story Generator</title>
-    <script src="jquery-3.7.1.min.js"></script>
-    <script src="tracery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<script>
+    $(document).ready(function () {
+        let grammarData;
+        let interval;
+        let running = true;
 
-    <div class="container">
-        <h1>🛸 Sci-Fi Story Generator 🌌</h1>
-        <div id="image-container"></div>
-        <div id="story">Loading...</div>
-        <button id="toggle">⏸ Pause</button>
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            let grammarData;
-            let interval;
-            let running = true;
-
-            // Load the JSON grammar file
-            $.getJSON("sighting.json", function (data) {
-                grammarData = data;
-                generateContent(); // Generate first image & story
-                startLoop(); // Start updating every 2 seconds
-            }).fail(function () {
-                $("#story").text("Error loading Tracery grammar.");
-            });
-
-            // Generate new SVG and story
-            function generateContent() {
-                if (grammarData) {
-                    let grammar = tracery.createGrammar(grammarData);
-                    
-                    // Generate text story
-                    let story = grammar.flatten("#origin#");
-                    $("#story").html(story);
-
-                    // Generate SVG image
-                    let svgCode = grammar.flatten("#image#");
-                    $("#image-container").html(svgCode);
-                }
-            }
-
-            // Start auto-generating every 2 seconds
-            function startLoop() {
-                interval = setInterval(generateContent, 2000);
-            }
-
-            // Toggle Pause/Resume
-            $("#toggle").click(function () {
-                if (running) {
-                    clearInterval(interval);
-                    $(this).text("▶ Resume");
-                } else {
-                    startLoop();
-                    $(this).text("⏸ Pause");
-                }
-                running = !running;
-            });
+        // Load the JSON grammar file
+        $.getJSON("sighting.json", function (data) {
+            grammarData = data;
+            generateContent(); // Generate first image & story
+            startLoop(); // Start updating every 2 seconds
+        }).fail(function () {
+            $("#story").text("Error loading Tracery grammar.");
         });
-    </script>
 
-</body>
-</html>
+        // Generate new adventure-themed image and story
+        function generateContent() {
+            if (grammarData) {
+                let grammar = tracery.createGrammar(grammarData);
+                
+                // Generate text story
+                let story = grammar.flatten("#origin#");
+                $("#story").html(story);
+
+                // Generate adventure-themed image (UFOs replaced with adventure items)
+                let imagePath = grammar.flatten("#image#");
+                $("#image-container").html(`<img src="${imagePath}" width="200" alt="Mystical Artifact">`);
+            }
+        }
+
+        // Start auto-generating every 2 seconds
+        function startLoop() {
+            interval = setInterval(generateContent, 2000);
+        }
+
+        // Toggle Pause/Resume
+        $("#toggle").click(function () {
+            if (running) {
+                clearInterval(interval);
+                $(this).text("▶ Resume");
+            } else {
+                startLoop();
+                $(this).text("⏸ Pause");
+            }
+            running = !running;
+        });
+    });
+</script>
